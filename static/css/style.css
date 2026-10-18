@@ -1,0 +1,40 @@
+*{box-sizing:border-box}
+:root{--bg:#f4f7fb;--surface:#fff;--text:#172033;--muted:#6b7280;--line:#e6eaf0;--primary:#4f46e5;--primary2:#7c3aed;--success:#16a34a;--danger:#dc2626;--shadow:0 10px 30px rgba(25,35,55,.07)}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
+.app-shell{display:flex;min-height:100vh}
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:260px;background:#111827;color:#fff;padding:26px 18px;display:flex;flex-direction:column}
+.brand{display:flex;gap:12px;align-items:center;padding:4px 8px 28px}
+.brand-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary2));display:grid;place-items:center;font-weight:800}
+.brand h2{font-size:16px;margin:0 0 4px}.brand span{font-size:11px;color:#9ca3af}
+nav{display:grid;gap:8px}
+.nav-link{color:#cbd5e1;text-decoration:none;padding:12px 14px;border-radius:10px;font-size:14px}
+.nav-link:hover,.nav-link.active{background:#1f2937;color:#fff}
+.sidebar-footer{margin-top:auto;font-size:12px;color:#9ca3af;padding:14px 8px}
+.status-dot{display:inline-block;width:7px;height:7px;background:#22c55e;border-radius:50%;margin-right:7px}
+.main{margin-left:260px;width:calc(100% - 260px);padding:34px 42px}
+.topbar{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:28px}
+.eyebrow{margin:0 0 7px;font-size:11px;letter-spacing:1.5px;font-weight:700;color:var(--primary)}
+h1{font-size:32px;margin:0 0 8px}.subtitle,.section-heading p{color:var(--muted);margin:0}
+.topbar-badge{background:#fff;border:1px solid var(--line);padding:10px 14px;border-radius:10px;font-size:12px;color:#475569}
+.section{margin:28px 0 42px;scroll-margin-top:20px}
+.section-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:15px}
+.section-heading h2{margin:0 0 5px;font-size:21px}.section-heading p{font-size:13px}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpi-card,.panel,.powerbi-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.kpi-card{padding:20px}.kpi-label{font-size:11px;font-weight:700;color:#64748b;letter-spacing:.7px}.kpi-value{font-size:31px;font-weight:800;margin:8px 0}.kpi-note{font-size:12px;color:var(--muted)}
+.chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.chart-panel{padding:18px;min-height:320px}.chart-panel.wide{grid-column:span 1}
+.panel-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.panel-title h3{font-size:14px;margin:0}.panel-title span{font-size:11px;color:var(--muted)}
+.chart-panel canvas{max-height:255px}
+.search{width:220px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;outline:none;background:#fff}
+.search:focus{border-color:#a5b4fc}
+.table-panel{overflow:hidden}.table-wrap{overflow:auto}
+table{width:100%;border-collapse:collapse;min-width:750px}th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);font-size:13px}th{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;background:#f8fafc}
+.result-pass{color:var(--success);font-weight:700}.result-fail{color:var(--danger);font-weight:700}
+.powerbi-card{overflow:hidden}.powerbi-card img{display:block;width:100%;height:auto;min-height:360px;object-fit:cover;background:#eef2ff}
+.powerbi-caption{padding:15px 18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:13px}.powerbi-caption span{color:var(--muted)}
+code{background:#f1f5f9;padding:2px 5px;border-radius:4px}
+footer{text-align:center;color:#94a3b8;font-size:12px;padding:18px 0 35px}
+@media(max-width:1000px){.sidebar{width:220px}.main{margin-left:220px;width:calc(100% - 220px);padding:25px}.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.sidebar{position:static;width:100%;height:auto}.app-shell{display:block}.main{margin:0;width:100%;padding:20px}.topbar{display:block}.topbar-badge{display:inline-block;margin-top:15px}.chart-grid{grid-template-columns:1fr}.kpi-grid{grid-template-columns:1fr 1fr}.powerbi-caption{display:block}.powerbi-caption span{display:block;margin-top:6px}}

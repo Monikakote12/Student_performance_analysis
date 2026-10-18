@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Analytics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">SP</div>
+            <div>
+                <h2>Student Analytics</h2>
+                <span>Performance Dashboard</span>
+            </div>
+        </div>
+        <nav>
+            <a class="nav-link active" href="#overview">Overview</a>
+            <a class="nav-link" href="#performance">Performance</a>
+            <a class="nav-link" href="#students">Students</a>
+            <a class="nav-link" href="#powerbi">Power BI Dashboard</a>
+        </nav>
+        <div class="sidebar-footer">
+            <span class="status-dot"></span>
+            Analytics system ready
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">MINI PROJECT • DATA ANALYSIS</p>
+                <h1>Student Performance Analytics</h1>
+                <p class="subtitle">Analyze academic performance, attendance, study habits and results.</p>
+            </div>
+            <div class="topbar-badge">Live from students.csv</div>
+        </header>
+
+        <section id="overview" class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>Overview</h2>
+                    <p>Key performance indicators from the student dataset.</p>
+                </div>
+            </div>
+            <div class="kpi-grid">
+                <div class="kpi-card"><div class="kpi-label">TOTAL STUDENTS</div><div id="totalStudents" class="kpi-value">—</div><div class="kpi-note">Students analyzed</div></div>
+                <div class="kpi-card"><div class="kpi-label">AVERAGE MARKS</div><div id="averageMarks" class="kpi-value">—</div><div class="kpi-note">Internal marks</div></div>
+                <div class="kpi-card"><div class="kpi-label">AVG ATTENDANCE</div><div id="averageAttendance" class="kpi-value">—</div><div class="kpi-note">Attendance percentage</div></div>
+                <div class="kpi-card"><div class="kpi-label">PASS RATE</div><div id="passRate" class="kpi-value">—</div><div class="kpi-note">Based on Result column</div></div>
+            </div>
+        </section>
+
+        <section id="performance" class="section">
+            <div class="section-heading">
+                <div><h2>Performance Analysis</h2><p>Visual analysis of marks, attendance and study behaviour.</p></div>
+            </div>
+            <div class="chart-grid">
+                <div class="panel chart-panel wide">
+                    <div class="panel-title"><h3>Internal Marks by Student</h3><span>Bar chart</span></div>
+                    <canvas id="marksChart"></canvas>
+                </div>
+                <div class="panel chart-panel">
+                    <div class="panel-title"><h3>Pass vs Fail</h3><span>Result distribution</span></div>
+                    <canvas id="resultChart"></canvas>
+                </div>
+                <div class="panel chart-panel">
+                    <div class="panel-title"><h3>Study Hours vs Marks</h3><span>Relationship</span></div>
+                    <canvas id="studyChart"></canvas>
+                </div>
+                <div class="panel chart-panel wide">
+                    <div class="panel-title"><h3>Attendance by Student</h3><span>Percentage</span></div>
+                    <canvas id="attendanceChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="students" class="section">
+            <div class="section-heading">
+                <div><h2>Student Records</h2><p>Search and review the underlying dataset.</p></div>
+                <input id="searchInput" class="search" type="search" placeholder="Search student...">
+            </div>
+            <div class="panel table-panel">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>ID</th><th>Name</th><th>Study Hours</th><th>Attendance</th><th>Assignments</th><th>Internal Marks</th><th>Result</th></tr>
+                        </thead>
+                        <tbody id="studentTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="powerbi" class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>Power BI Dashboard</h2>
+                    <p>Your Power BI dashboard can be displayed here as an image.</p>
+                </div>
+            </div>
+            <div class="powerbi-card">
+                <img id="powerbiImage" src="{{ url_for('static', filename='images/powerbi_dashboard.png') }}" alt="Power BI Dashboard">
+                <div class="powerbi-caption">
+                    <strong>Power BI Dashboard Preview</strong>
+                    <!-- <span>Replace <code>static/images/powerbi_dashboard.png</code> with your actual Power BI screenshot.</span> -->
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Student Performance Analytics • Python • Pandas • PySpark • Flask • Power BI
+        </footer>
+    </main>
+</div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

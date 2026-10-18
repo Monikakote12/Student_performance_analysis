@@ -1,0 +1,12 @@
+step 1: Check your python version, if it is install in your computer or not using "python --version" or "py --version".
+
+step 2: * In the terminal, make sure you are inside the folder containing app.py.
+        * create .venv using "python -m venv venv" or "py -m venv venv".
+
+step 3: Install the project dependencies using ".\venv\Scripts\python.exe -m pip install --upgrade pip".
+
+step 4: After that finishes, run ".\venv\Scripts\python.exe -m pip install -r requirements.txt".
+
+step 5: run the program using ".\venv\Scripts\python.exe app.py".
+
+step 6: Open the project in your browser "open in localhost: http://127.0.0.1:5000".
